@@ -1,0 +1,37 @@
+{
+  "name": "printer-eirlab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack serve --host 0.0.0.0",
+    "stop": "pkill --signal SIGINT webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "ros",
+    "no-code"
+  ],
+  "author": "Sébastien Delpeuch, Antoine Pringalle",
+  "license": "AGPL-3.0-only",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "babel-loader": "^8.2.2",
+    "babel-polyfill": "^6.26.0",
+    "webpack": "^5.49.0"
+  }
+}

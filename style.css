@@ -1,0 +1,270 @@
+:root {
+    --border-width: 0px; /* debug */
+    font-family: sans-serif;
+    overflow: hidden;
+    --primary-color-loader: #8f8f8f;
+    --secondary-color-loader: #a6a6a6;
+    --animation-count: 45; /* 45*4s = 3min before stopping loading animation */
+}
+.title {
+    grid-area: title;
+    border: var(--border-width) solid red;
+    position: relative;
+}
+@font-face {
+    font-family: "Milliard";
+    src: url("Rene Bieder Milliard Medium.otf");
+}
+.title p {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8vh;
+    font-family: Milliard, serif;
+}
+.camera {
+    grid-area: camera;
+    border: var(--border-width) solid orange;
+}
+.preview {
+    grid-area: preview;
+    border: var(--border-width) solid cyan;
+}
+.camera iframe, .preview iframe {
+    border: var(--border-width) solid grey;
+    width: 100%;
+    height: 100%;
+}
+.camera iframe {
+    margin: calc((88vh - 50vw * 3 / 4) / 2) 0;
+}
+.preview iframe {
+    margin: calc((100% - 300px) / 2) calc((100% - 300px) / 2);
+}
+.temperatures {
+    grid-area: temperatures;
+    display: grid;
+    border: var(--border-width) solid green;
+    grid-template-rows: 33% 33% 33%;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+    grid-template-areas: "nozzle_L_logo nozzle_L_text" "nozzle_R_logo nozzle_R_text" "bed_logo bed_text";
+    justify-items: center;
+}
+.temperatures svg {
+    width: auto;
+    height: 8vh;
+}
+.temperatures p {
+    text-align: end;
+    font-size: 8vh;
+}
+.nozzle_R_logo {
+    grid-area: nozzle_R_logo;
+    border: var(--border-width) solid magenta;
+}
+.nozzle_R_text {
+    grid-area: nozzle_R_text;
+    border: var(--border-width) solid magenta;
+}
+.nozzle_L_logo {
+    grid-area: nozzle_L_logo;
+    border: var(--border-width) solid magenta;
+}
+.nozzle_L_text {
+    grid-area: nozzle_L_text;
+    border: var(--border-width) solid magenta;
+}
+.bed_logo {
+    grid-area: bed_logo;
+    border: var(--border-width) solid magenta;
+}
+.bed_text {
+    grid-area: bed_text;
+    border: var(--border-width) solid magenta;
+}
+.time {
+    grid-area: time;
+    border: var(--border-width) solid black;
+    text-align: center;
+    line-height: 1vh;
+    position: relative;
+}
+.time div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.time div p {
+    line-height: 1vh;
+    font-size: 10vh;
+}
+.progress-circle {
+    grid-area: progress-circle;
+    border: var(--border-width) solid purple;
+    position: relative;
+    width: auto;
+    height: 100%;
+}
+.printer_frame {
+    display: none;
+    width: 100%;
+    height: 98vh;
+    border: var(--border-width) solid blue;
+    grid-template-rows: 10% 44% 44% 2%;
+    grid-template-columns: 50% 25% 25%;
+    grid-template-areas: "title title title" "camera preview temperatures" "camera progress-circle time";
+}
+canvas {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 95%;
+}
+span {
+    color: #555;
+    display: block;
+    text-align: center;
+    font-weight: 400;
+    font-size: 7vh;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+iframe {
+    border: none;
+}
+@keyframes confettiRain {
+    0% {
+        opacity: 1;
+        margin-top: -100vh;
+        margin-left: -200px;
+    }
+    100% {
+        opacity: 1;
+        margin-top: 100vh;
+        margin-left: 200px;
+    }
+}
+.confetti {
+    display: flex;
+    opacity: 0;
+    position: absolute;
+    width: 1rem;
+    height: 1.5rem;
+    animation: confettiRain 5s;
+}
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes grow {
+    0%, 15%, 100% {
+        transform: scale(1);
+    }
+    5% {
+        transform: scale(1.2);
+    }
+}
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 98vh;
+    border-radius: 50%;
+    filter: url('#goo');
+}
+.wrapper > * {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3rem;
+    height: 3rem;
+    margin: -1.5rem;
+}
+.wrapper > *:nth-of-type(1) {
+    transform: rotate(0deg) translate(7.5rem) rotate(0deg);
+}
+.wrapper > *:nth-of-type(1) > .bubble {
+    animation: grow 4s ease var(--animation-count);
+    animation-delay: -0.1s;
+}
+.wrapper > *:nth-of-type(2) {
+    transform: rotate(45deg) translate(7.5rem) rotate(-45deg);
+}
+.wrapper > *:nth-of-type(2) > .bubble {
+    animation: grow 4s ease var(--animation-count);
+    animation-delay: 0.4s;
+}
+.wrapper > *:nth-of-type(3) {
+    transform: rotate(90deg) translate(7.5rem) rotate(-90deg);
+}
+.wrapper > *:nth-of-type(3) > .bubble {
+    animation: grow 4s ease var(--animation-count);
+    animation-delay: 0.9s;
+}
+.wrapper > *:nth-of-type(4) {
+    transform: rotate(135deg) translate(7.5rem) rotate(-135deg);
+}
+.wrapper > *:nth-of-type(4) > .bubble {
+    animation: grow 4s ease var(--animation-count);
+    animation-delay: 1.4s;
+}
+.wrapper > *:nth-of-type(5) {
+    transform: rotate(180deg) translate(7.5rem) rotate(-180deg);
+}
+.wrapper > *:nth-of-type(5) > .bubble {
+    animation: grow 4s ease var(--animation-count);
+    animation-delay: 1.9s;
+}
+.wrapper > *:nth-of-type(6) {
+    transform: rotate(225deg) translate(7.5rem) rotate(-225deg);
+}
+.wrapper > *:nth-of-type(6) > .bubble {
+    animation: grow 4s ease var(--animation-count);
+    animation-delay: 2.4s;
+}
+.wrapper > *:nth-of-type(7) {
+    transform: rotate(270deg) translate(7.5rem) rotate(-270deg);
+}
+.wrapper > *:nth-of-type(7) > .bubble {
+    animation: grow 4s ease var(--animation-count);
+    animation-delay: 2.9s;
+}
+.wrapper > *:nth-of-type(8) {
+    transform: rotate(315deg) translate(7.5rem) rotate(-315deg);
+}
+.wrapper > *:nth-of-type(8) > .bubble {
+    animation: grow 4s ease var(--animation-count);
+    animation-delay: 3.4s;
+}
+.bubbleWrap {
+    max-width: 100%;
+}
+.bubble {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--primary-color-loader);
+}
+.satWrap {
+    animation: spin 4s linear var(--animation-count);
+}
+.sat {
+    width: 2.25em;
+    height: 2.25em;
+    background: var(--secondary-color-loader);
+    border-radius: 50%;
+    margin-left: 7.875em;
+    box-shadow: 0 0 50px -4px #bce4ff;
+}

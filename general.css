@@ -1,0 +1,169 @@
+@font-face {
+    font-family: "Milliard";
+    src: url("Rene Bieder Milliard Medium.otf");
+}
+
+:root {
+    --border-width: 0px; /* debug */
+    font-family: sans-serif;
+}
+
+.screen {
+    width: 95vw;
+    height: 98vh;
+    display: none;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    grid-row-gap: 50px;
+    grid-column-gap: 50px;
+    grid-auto-flow: row;
+    justify-items: stretch;
+    align-items: stretch;
+    grid-template-areas:
+    "one two"
+    "three four";
+}
+
+.one {
+    grid-area: one;
+}
+
+.two {
+    grid-area: two;
+}
+
+.three {
+    grid-area: three;
+}
+
+.four {
+    grid-area: four;
+}
+
+.general-frame {
+    display: grid;
+    width: 100%;
+    height: 49vh;
+    border: var(--border-width) solid blue;
+    grid-template-rows: 20% 60% 20%;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+    "title progress-circle"
+    "preview-general progress-circle"
+    "preview-general status";
+}
+
+.general-printer-name {
+    grid-area: title;
+    border: var(--border-width) solid red;
+    position: relative;
+}
+
+.general-printer-name p {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    font-family: Milliard;
+    transform: translate(-50%, -50%);
+    font-size: 5vh;
+}
+
+.preview-general {
+    grid-area: preview-general;
+    border: var(--border-width) solid cyan;
+    position: relative;
+}
+
+.preview-general iframe {
+    width: 100%;
+    height: 100%;
+    margin: calc((75% - 300px) / 2) calc((100% - 300px) / 2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.status {
+    grid-area: status;
+    border: var(--border-width) solid black;
+    text-align: center;
+    line-height: 1vh;
+    position: relative;
+}
+
+.status div {
+    /* centering text */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1vh;
+    font-size: 10vh;
+}
+
+.progress-circle {
+    grid-area: progress-circle;
+    border: var(--border-width) solid purple;
+    position: relative;
+    width: auto;
+    height: 100%;
+}
+
+canvas {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 95%;
+}
+
+span {
+    color: #555;
+    display: block;
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 400;
+    font-size: 7vh;
+}
+
+.gradient-border {
+    --borderWidth: 0px;
+    --secondColor: white;
+    background: #fff;
+    position: relative;
+}
+.gradient-border:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, white, var(--secondColor));
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+}
+
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
