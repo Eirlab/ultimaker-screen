@@ -11,7 +11,7 @@ sur un navigateur.
 L'application est actuellement utilisée sur une des télévisions d'Eirlab nous permettant de voir l'état des imprimantes
 depuis l'open space.
 
-![tv](tv.jpg)
+![tv](docs/tv.jpg)
 
 des imprimantes 3D sont statiques sur le réseau des objets connectés d'Eirlab. L'écran defile entre nos imprimantes 3D
 en fonction des situations :
@@ -22,14 +22,14 @@ en fonction des situations :
   les imprimantes et l'écran spécifique à chaque imprimante indiquant le temps restant, les températures et
   retransmettant les images de la caméra intégrée à l'imprimante
 
-![general](general.png)
+![general](docs/general.png)
 
-![specific](specific.png)
+![specific](docs/specific.png)
 
 Concernant le code des modèles HTML ont été mis en place par Antoine, notre code JavaScript se contente de modifier
 certains passages de ce HTML avec les données qu'il récupère au près de l'API selon le diagramme d'activité suivant
 
-![activity](activity.png)
+![activity](docs/activity.png)
 
 ## Contribution
 
