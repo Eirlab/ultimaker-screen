@@ -4,7 +4,7 @@
     overflow: hidden;
     --primary-color-loader: #8f8f8f;
     --secondary-color-loader: #a6a6a6;
-    --animation-count: 45; /* 45*4s = 3min before stopping loading animation */
+    --animation-count: 6; /* 6*4s = 24sec before stopping loading animation */
 }
 .title {
     grid-area: title;
@@ -267,4 +267,21 @@ iframe {
     border-radius: 50%;
     margin-left: 7.875em;
     box-shadow: 0 0 50px -4px #bce4ff;
+}
+
+.error_frame {
+    display: grid;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    font-weight: bold;
+    font-size: 70px;
+}
+
+.wifi_logo {
+    width: 400px;
+    height: auto;
+    margin: 0 auto;
 }
