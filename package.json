@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "build": "webpack",
-    "start": "webpack serve --host 0.0.0.0",
+    "start": "python reboot-raspberry.py & webpack serve",
     "stop": "pkill --signal SIGINT webpack"
   },
   "repository": {
@@ -14,8 +13,8 @@
     "url": ""
   },
   "keywords": [
-    "ros",
-    "no-code"
+    "ultimaker",
+    "eirlab"
   ],
   "author": "Sébastien Delpeuch, Antoine Pringalle",
   "license": "AGPL-3.0-only",
