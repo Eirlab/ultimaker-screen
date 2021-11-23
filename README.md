@@ -1,38 +1,60 @@
-# Application de suivi – Ultimaker série S
+# Monitoring application for Ultimaker S series
 
-Depuis Septembre 2021, Eirlab Community possède 2 imprimantes Ultimaker de série S. Ces imprimantes sont livrées avec
-une API développée par Ultimaker permettant d'obtenir les différentes informations sur les impressions, l'état de l'
-imprimante etc.
+Since September 2021, Eirlab Community has 2 Ultimaker S series
+printers. These printers are delivered with an API developed by
+Ultimaker to get different information about the prints, the status
+of the printer etc.
 
-En conséquence, Antoine et Sébastien ont développé une application permettant de suivre les impressions en cours à
-Eirlab, cette application est sous license GPL3.0 sur ce dépôt et est développé en Javascript permettant de l'afficher
-sur un navigateur.
+As a result, Antoine and Sébastien have developed an application
+to track the printing in progress at Eirlab, this application is
+licensed under [GPL-3.0
+License](https://github.com/Eirlab/ultimaker-screen/blob/main/LICENSE)
+on this repository and is developed in Javascript to be displayed on
+a browser.
 
-L'application est actuellement utilisée sur une des télévisions d'Eirlab nous permettant de voir l'état des imprimantes
-depuis l'open space.
+The application is currently used on one of Eirlab's TVs allowing
+us to see the status of the printers from the open space.
 
-![tv](docs/tv.jpg)
+[![Television](https://raw.githubusercontent.com/Eirlab/ultimaker-screen/main/docs/tv.jpg)](https://raw.githubusercontent.com/Eirlab/ultimaker-screen/main/docs/tv.jpg)
 
-des imprimantes 3D sont statiques sur le réseau des objets connectés d'Eirlab. L'écran defile entre nos imprimantes 3D
-en fonction des situations :
+## Quick setup
 
-+ Lorsqu'une imprimante n'est en fonctionnement, un écran général affiche les dernières impressions et leur état final,
-  un carré vert clignotant autour d'une imprimante indique que l'imprimante est disponible.
-+ Lorsque au moins une impression est en cours l'application alterne entre l'écran général affichant le status de toutes
-  les imprimantes et l'écran spécifique à chaque imprimante indiquant le temps restant, les températures et
-  retransmettant les images de la caméra intégrée à l'imprimante
+```bash
+git clone https://github.com/Eirlab/ultimaker-screen
+cd ultimaker-screen
+npm install
+npm run start
+```
 
-![general](docs/general.png)
+This application runs on the following environment:
+- Raspberry Pi 3B+ (16Gb, [this OS](https://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2021-11-08/2021-10-30-raspios-bullseye-armhf.zip))
+- npm 5.8.0
+- node 10.21.0
+- nodejs 10.19.0
 
-![specific](docs/specific.png)
+## Usage
 
-Concernant le code des modèles HTML ont été mis en place par Antoine, notre code JavaScript se contente de modifier
-certains passages de ce HTML avec les données qu'il récupère au près de l'API selon le diagramme d'activité suivant
+To edit the configuration, open the `index.js` file in
+`src/` folder. You should edit:
+- `API.HOST_URL` [here](https://github.com/Eirlab/ultimaker-screen/main/src/index.js#L9) with the ip of your cluster of Ultimaker
+  printers
+- The printers instantiated [here](https://github.com/Eirlab/ultimaker-screen/main/src/index.js#L347)
+- The timers on TV instantiation [here](https://github.com/Eirlab/ultimaker-screen/main/src/index.js#L350).
 
-![activity](docs/activity.png)
+To run the application, run the following commands:
+```bash
+npm install
+npm run start
+```
+
+## Result
+
+| [![Screenshot](https://raw.githubusercontent.com/Eirlab/ultimaker-screen/main/docs/screenshot.png)](https://raw.githubusercontent.com/Eirlab/ultimaker-screen/main/docs/screenshot.png) | [![Screenshot](https://raw.githubusercontent.com/Eirlab/ultimaker-screen/main/docs/screenshot-general.png)](https://raw.githubusercontent.com/Eirlab/ultimaker-screen/main/docs/screenshot-general.png) |
+| --------------------- | ------------------ |
+| Screenshot Individial | Screenshot General |
 
 ## Contribution
 
-+ ✨ Les nouvelles fonctionnalités et des idées de fonctionnalités de cet écran sont les bienvenues ! ⚠️ L'accès à l'API des imprimantes 3D ne peut se faire que via le réseau eirlabIoT.
-+ 🐛 Notre première implémentation contient encore beaucoup d'erreurs dans la console, il serait bien de passer du temps pour les corriger ...
-+ ♻️ Notre code à besoin d'un refactor pour organiser les différentes fonctions dans des classes et faire interagir les classes entre elles
+- ✨ New features and ideas for features of this screen are welcome! ⚠ Access to the 3D printers API can only be done via the eirlabIoT network.
+- 🐛 Although this is v2 of the implementation, the application surely contains errors in the console, if you find any, please report them in the issues and suggest a fix if you know of one.
+
