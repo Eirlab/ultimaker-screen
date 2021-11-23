@@ -36,10 +36,10 @@ This application runs on the following environment:
 
 To edit the configuration, open the `index.js` file in
 `src/` folder. You should edit:
-- `API.HOST_URL` [here](https://github.com/Eirlab/ultimaker-screen/main/src/index.js#L9) with the ip of your cluster of Ultimaker
+- `API.HOST_URL` [here](https://github.com/Eirlab/ultimaker-screen/blob/498cfca2f0deb80dfaaec7fab34f1031c31e57e3/src/index.js#L9) with the ip of your cluster of Ultimaker
   printers
-- The printers instantiated [here](https://github.com/Eirlab/ultimaker-screen/main/src/index.js#L347)
-- The timers on TV instantiation [here](https://github.com/Eirlab/ultimaker-screen/main/src/index.js#L350).
+- The printers instantiated [here](https://github.com/Eirlab/ultimaker-screen/blob/498cfca2f0deb80dfaaec7fab34f1031c31e57e3/src/index.js#L347)
+- The timers on TV instantiation [here](https://github.com/Eirlab/ultimaker-screen/blob/498cfca2f0deb80dfaaec7fab34f1031c31e57e3/src/index.js#L350).
 
 To run the application, run the following commands:
 ```bash
@@ -49,7 +49,7 @@ npm run start
 
 ## Result
 
-| [![Screenshot](https://raw.githubusercontent.com/Eirlab/ultimaker-screen/main/docs/screenshot.png)](https://raw.githubusercontent.com/Eirlab/ultimaker-screen/main/docs/screenshot.png) | [![Screenshot](https://raw.githubusercontent.com/Eirlab/ultimaker-screen/main/docs/screenshot-general.png)](https://raw.githubusercontent.com/Eirlab/ultimaker-screen/main/docs/screenshot-general.png) |
+| [![Screenshot](https://raw.githubusercontent.com/Eirlab/ultimaker-screen/main/docs/specific.png)](https://raw.githubusercontent.com/Eirlab/ultimaker-screen/main/docs/specific.png) | [![Screenshot](https://raw.githubusercontent.com/Eirlab/ultimaker-screen/main/docs/general.png)](https://raw.githubusercontent.com/Eirlab/ultimaker-screen/main/docs/general.png) |
 | --------------------- | ------------------ |
 | Screenshot Individial | Screenshot General |
 
