@@ -4,7 +4,7 @@
     overflow: hidden;
     --primary-color-loader: #8f8f8f;
     --secondary-color-loader: #a6a6a6;
-    --animation-count: 6; /* 6*4s = 24sec before stopping loading animation */
+    --animation-count: 8; /* 8*4s = 32sec before stopping loading animation */
 }
 .title {
     grid-area: title;
@@ -278,6 +278,7 @@ iframe {
     padding: 10px;
     font-weight: bold;
     font-size: 70px;
+    text-align: center;
 }
 
 .wifi_logo {
