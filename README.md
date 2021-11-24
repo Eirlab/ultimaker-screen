@@ -23,6 +23,7 @@ us to see the status of the printers from the open space.
 git clone https://github.com/Eirlab/ultimaker-screen
 cd ultimaker-screen
 npm install
+echo "$USERNAME ALL=(ALL:ALL) NOPASSWD: `pwd`/reboot-raspberry.sh" >> /etc/sudoers
 npm run start
 ```
 
@@ -33,6 +34,12 @@ This application runs on the following environment:
 - nodejs 10.19.0
 
 ## Usage
+
+A bash script allow us to reboot the raspberry if it can't connect to the internet. This script needs sudo privileges.
+To add them , run the following command:
+```bash
+echo "$USERNAME ALL=(ALL:ALL) NOPASSWD: $PATH_TO_APPLICATION/reboot-raspberry.sh" >> /etc/sudoers
+```
 
 To edit the configuration, open the `index.js` file in
 `src/` folder. You should edit:
@@ -50,7 +57,7 @@ npm run start
 ## Result
 
 | [![Screenshot](https://raw.githubusercontent.com/Eirlab/ultimaker-screen/main/docs/specific.png)](https://raw.githubusercontent.com/Eirlab/ultimaker-screen/main/docs/specific.png) | [![Screenshot](https://raw.githubusercontent.com/Eirlab/ultimaker-screen/main/docs/general.png)](https://raw.githubusercontent.com/Eirlab/ultimaker-screen/main/docs/general.png) |
-| --------------------- | ------------------ |
+| :-------------------: | :----------------: |
 | Screenshot Individial | Screenshot General |
 
 ## Contribution
