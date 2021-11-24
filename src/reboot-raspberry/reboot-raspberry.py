@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-This Python3 script is a http server that listens on 8080 port and will shutdown the
+This Python3 script is a http server that listens on 8081 port and will shutdown the
 computer when a GET request is received.
 """
 from http.server import HTTPServer, BaseHTTPRequestHandler
